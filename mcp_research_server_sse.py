@@ -7,7 +7,15 @@ from mcp.server.fastmcp import FastMCP
 PAPER_DIR = "papers"
 
 # Initialize FastMCP server
-mcp = FastMCP("research", port=8001)
+#mcp = FastMCP("research", port=8001)
+
+PORT = int(os.environ.get("PORT", 8001))
+
+mcp = FastMCP(
+    "research",
+    host="0.0.0.0",
+    port=PORT,
+)
 # Stateless can be used when you want the server to handle simple, independent requests (no memory of previous interactions with the same client). Stateful can be used when you want the server to handle multiple requests that are part of a workflow and you want the server to remember the Client information and context across multiple requests.
 # Stateful server (maintains session state)
   #mcp = FastMCP("research")
