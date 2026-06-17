@@ -236,4 +236,5 @@ Please present both detailed information about each paper and a high-level synth
 
 if __name__ == "__main__":
     # Initialize and run the server
+    print(f"Starting MCP server on host=0.0.0.0 port={PORT}")
     mcp.run(transport="sse")
